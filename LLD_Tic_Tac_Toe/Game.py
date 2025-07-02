@@ -39,27 +39,27 @@ class Game:
         n = len(self.board.board)
         streak = 0
         for c in range(n):
-            if self.board.board[row][c].piece==player.playerPiece:
+            if self.board.board[row][c].piece==player.playerPiece.piece:
                 streak+=1
         
         if streak!=n:
             streak = 0
             for r in range(n):
-                if self.board.board[r][col].piece==player.playerPiece:
+                if self.board.board[r][col].piece==player.playerPiece.piece:
                     streak+=1
         
         if streak!=n:
             streak = 0
             for r in range(n):
                 for c in range(n):
-                    if r==c and self.board.board[r][c].piece==player.playerPiece:
+                    if r==c and self.board.board[r][c].piece==player.playerPiece.piece:
                         streak+=1
         
         if streak!=n:
             streak = 0
             for r in range(n-1, -1, -1):
                 for c in range(n-1, -1, -1):
-                    if r==c and self.board.board[r][c].piece==player.playerPiece:
+                    if r==c and self.board.board[r][c].piece==player.playerPiece.piece:
                         streak+=1
                         
         return streak==n

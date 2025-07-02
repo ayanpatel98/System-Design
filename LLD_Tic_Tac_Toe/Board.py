@@ -10,7 +10,7 @@ class Board:
             return False
         
         if self.board[r][c].piece==None:
-            self.board[r][c].piece = playerPiece
+            self.board[r][c].piece = playerPiece.piece
             return True
         return False
     
