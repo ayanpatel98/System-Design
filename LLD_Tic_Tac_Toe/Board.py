@@ -22,6 +22,7 @@ class Board:
                 if self.board[r][c].piece==None:
                     return True
         return False
+    
 
     def printBoard(self):
         n = self.size
