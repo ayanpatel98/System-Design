@@ -9,9 +9,11 @@ class ElevatorController:
             cls._instance = ElevatorController()
         return cls._instance
 
-    def __init__(self, totalElevators: int):
+    def __init__(self, totalElevators: int, totalFloors: int, elevatorList: List[Elevator]):
         if not hasattr(self, "_initialized"):
-            self.elevatorList = [Elevator(i, 0) for i in range(0, totalElevators)]
+            # self.elevatorList = [Elevator(i, 0) for i in range(0, totalElevators)]
+            self.elevatorList = elevatorList
+            self.totalFloors = totalFloors
             self._initialized = True
 
     def moveElevator(self, floorNumber: int, elevatorNumber: int):
@@ -42,7 +44,9 @@ class ElevatorController:
     def stopAllElevators(self):
         for elevator in self.elevatorList:
             if elevator.direction==Directions.UP:
-                elevator.currFloor+=1
+                if elevator.currFloor < self.totalFloors-1:
+                    elevator.currFloor+=1
             elif elevator.direction==Directions.DOWN:
-                elevator.direction-=1
+                if elevator.currFloor > 0:
+                    elevator.currFloor-=1
             elevator.direction = Directions.IDLE

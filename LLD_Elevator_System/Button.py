@@ -1,6 +1,6 @@
-from abs import ABS, abstractmethod
+from abc import ABC, abstractmethod
 
-class Button(ABS):
+class Button(ABC):
 
     @abstractmethod
     def moveElevator(self):

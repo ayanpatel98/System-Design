@@ -1,4 +1,5 @@
 from Directions import Directions
+from InternalButton import InternalButton
 
 class Elevator:
     
@@ -7,3 +8,4 @@ class Elevator:
         self.currFloor = currFloor
         self.targetFloors = []
         self.direction = Directions.IDLE
+        self.internalButton = InternalButton()
