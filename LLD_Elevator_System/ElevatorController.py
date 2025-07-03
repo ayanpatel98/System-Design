@@ -9,7 +9,7 @@ class ElevatorController:
             cls._instance = ElevatorController()
         return cls._instance
 
-    def __init__(self, totalElevators: int, totalFloors: int, elevatorList: List[Elevator]):
+    def __init__(self, totalFloors: int, elevatorList: List[Elevator]):
         if not hasattr(self, "_initialized"):
             # self.elevatorList = [Elevator(i, 0) for i in range(0, totalElevators)]
             self.elevatorList = elevatorList

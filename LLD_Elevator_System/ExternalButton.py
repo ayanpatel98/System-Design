@@ -6,5 +6,5 @@ class ExternalButton(Button):
         self.floorNumber = floorNumber
         self.elevatorController = ElevatorController()
 
-    def callElevator(self):
+    def moveElevator(self):
         self.elevatorController.callElevator(self.floorNumber)
