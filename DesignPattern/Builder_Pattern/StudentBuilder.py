@@ -6,6 +6,8 @@ class StudentBuilder:
         self.rollNo = None
         self.age = None
         self.name = None
+        self.fatherName = None
+        self.motherName = None
         
     def setRollNo(self, rollNo: int):
         self.rollNo = rollNo

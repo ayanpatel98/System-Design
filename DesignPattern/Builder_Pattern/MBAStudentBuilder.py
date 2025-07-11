@@ -3,9 +3,10 @@ from StudentBuilder import StudentBuilder
 class MBAStudentBuilder(StudentBuilder):
 
     def __init__(self):
+        # call super in order to initialize the  parent class attributes as well 
+        # otherwise only child constructor attributes will be initialized
+        super().__init__()
         self.subjects =[]
-        self.fatherName = None
-        self.motherName = None
     
     def setFatherName(self, fatherName: str):
         self.fatherName  = fatherName
