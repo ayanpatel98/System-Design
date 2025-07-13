@@ -34,16 +34,16 @@ class LockerService:
         locker.pickupCode = None
         locker.package = None
 
-    def pickupPackage(self, pickupCode: str):
+    def pickupPackage(self, pickupCode: str) ->Optional[Package]:
         if pickupCode not in self.lockerLog:
             print("Package Not Available")
             return
         
         locker: Locker = self.lockerLog[pickupCode]
-
+        package = locker.package
         self.releaseLocker(locker)
         del self.lockerLog[pickupCode]
         print("Package Picked Up")
-        return
+        return package
 
 
