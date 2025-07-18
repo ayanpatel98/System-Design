@@ -18,11 +18,16 @@ class ElevatorController:
     def goToFloor(self, floorNumber: int, elevator: Elevator):
         if floorNumber>self.totalFloors or floorNumber<1:
             return
-        elevator.addToTarget(floorNumber)
+        elevator.targetFloorList.append(floorNumber)
 
     def callElevator(self, floorNumber: int):
         elevatorList = sorted(self.elevatorlist, key= lambda elevator: abs(elevator.currentFloor-floorNumber))
         elevator = elevatorList[0]
+
+        # Reach all the floors in between first
+        while elevator.targetFloorList and ((elevator.targetFloorList[0]<elevator.currentFloor and elevator.targetFloorList[0]>floorNumber)
+                                            or (elevator.targetFloorList[0]>elevator.currentFloor and elevator.targetFloorList[0]<floorNumber)):
+            elevator.targetFloorList.popleft()
 
         elevator.updateDirection(floorNumber)
         elevator.updateFloor(floorNumber)
