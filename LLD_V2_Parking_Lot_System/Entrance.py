@@ -7,7 +7,7 @@ class Entrance:
     def __init__(self, parkingManager: ParkingManager):
         self.parkingManager = parkingManager
 
-    def findParkingSport(self, vehicle: Vehicle)->Optional[ParkingSpot]:
+    def findParkingSpot(self, vehicle: Vehicle)->Optional[ParkingSpot]:
         return self.parkingManager.findParkingSpot(vehicle)
     
     def assignParkingSpot(self, parkingSpot: ParkingSpot, vehicle: Vehicle):

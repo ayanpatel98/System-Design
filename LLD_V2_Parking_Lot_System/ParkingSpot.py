@@ -9,3 +9,10 @@ class ParkingSpot:
         self.vehicle = None
         self.size = size
         self.status = ParkingSpotStatus.AVAILABLE
+    
+    def setParkingSpotStatus(self, status: ParkingSpotStatus):
+        self.status = status
+
+    def setParkingSpotVehicle(self, vehicle: Vehicle):
+        self.vehicle = vehicle
+

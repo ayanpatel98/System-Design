@@ -38,8 +38,8 @@ class ParkingManager:
             print("No Parking Spot Available")
             
     def assignParkingSpot(self, parkingSpot: ParkingSpot, vehicle: Vehicle):
-        parkingSpot.status = ParkingSpotStatus.NOT_AVAILABLE
-        parkingSpot.vehicle = vehicle
+        parkingSpot.setParkingSpotStatus(ParkingSpotStatus.NOT_AVAILABLE)
+        parkingSpot.setParkingSpotVehicle(vehicle)
         self.parkingSpotLog[vehicle.number] = parkingSpot
         print("Parking Assigned at: ", parkingSpot.id)
 
@@ -49,7 +49,7 @@ class ParkingManager:
             return
         
         parkingSpot: ParkingSpot = self.parkingSpotLog[vehicle]
-        parkingSpot.status = ParkingSpotStatus.AVAILABLE
-        parkingSpot.vehicle = None
+        parkingSpot.setParkingSpotStatus(ParkingSpotStatus.AVAILABLE)
+        parkingSpot.setParkingSpotVehicle(None)
         print("Vehicle Exited")
         
