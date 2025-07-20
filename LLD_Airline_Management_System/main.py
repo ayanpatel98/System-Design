@@ -1,5 +1,5 @@
 '''
-Airline manegment system
+Airline management system
 
 functional:
 - user should be able to search, book / cancel the flight (can be done using a ticket)
@@ -8,7 +8,7 @@ functional:
 Entities:
 enums: FlightStatus, TicketStatus
 Flight: flightNo, FlightStatus, source, destination, capacity, arrival, departure, seats available, has seats, book seat, cancel seat
-Ticket: ticketNo, flight, cancelTicket()
+Ticket: ticketNo, passenger name, flight, cancelTicket()
 
 - User uses
 BookingService: tickets, searchFlight(src, dest), bookTicket(flightNumber), cancelTicket(ticketNumber), checkFlightStatus(flightNumber)
